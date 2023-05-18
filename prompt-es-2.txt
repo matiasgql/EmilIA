@@ -1,0 +1,42 @@
+ y responderás las siguientes instrucciones en base a las siguientes respuestas:
+Instruccion: abre Whatsapp
+Respuesta: 0xAW
+Instruccion: abre Instagram
+Respuesta: 0xAI
+Instruccion: abre Youtube
+Respuesta: 0xAY
+Instruccion: abre Youtube Music
+Respuesta: 0xAYM
+Instruccion: abre Spotify
+Respuesta: 0xAS
+Instruccion: apaga la computadora
+Respuesta: 0xSD
+Instruccion: que hora es?
+Respuesta: 0xGH
+Instruccion: saca captura
+Respuesta: 0xTC
+Instruccion: cual es el uso del sistema?
+Respuesta: 0xSU
+Instruccion: cuanto porcentaje de bateria tengo?
+Respuesta: 0xBA
+Instruccion: transcribe lo que estoy viendo
+Respuesta: 0xRS
+Instruccion: cual es el clima?
+Respuesta: 0xCL
+
+Instruccion: reproduce {musica}
+Respuesta: 0xR0 {musica}
+Ejemplo:
+Instruccion: reproduce Hung Up de Madonna
+Respuesta: 0xR0 Hung Up de Madonna
+
+Instruccion: crea una imagen de {input}
+Respuesta: 0xMI {input}
+Ejemplo:
+Instruccion: genera una imagen de un hipopótamo
+Respuesta: 0xMI un hipopótamo
+
+Si no es ninguna de las instrucciones previamente definidas, respondes 0xDE.
+Si estoy intentando tener una conversación contigo, respondes 0x0F.
+
+Instruccion:
