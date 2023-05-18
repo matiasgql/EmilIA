@@ -11,7 +11,6 @@ import argparse
 import io
 import re
 import os
-import ipinfo
 import public_ip as ip
 import speech_recognition as sr
 import whisper
@@ -43,8 +42,6 @@ from langchain.llms import OpenAI
 from langchain.chains.api import open_meteo_docs
 from langchain.agents.agent_toolkits import create_python_agent
 from langchain.tools.python.tool import PythonREPLTool
-from langchain.agents.agent_toolkits import ZapierToolkit
-from langchain.utilities.zapier import ZapierNLAWrapper
 from googletrans import Translator
 from langchain.utilities import OpenWeatherMapAPIWrapper
 from transformers import pipeline
@@ -122,13 +119,9 @@ recorder.dynamic_energy_threshold = False
 os.environ["OPENAI_API_KEY"] = open(CURR_DIR + "key_openai.json").read()
 os.environ["SERPAPI_API_KEY"] = open(CURR_DIR + "key_serpapi.json").read()
 os.environ["OPENWEATHERMAP_API_KEY"] = open(CURR_DIR + "key_owm.json").read()
-os.environ["ZAPIER_NLA_API_KEY"] = open(CURR_DIR + "key_zapier.json").read()
 llm = ChatOpenAI(model_name="gpt-3.5-turbo",
                  temperature=0.2)
 llm_2 = OpenAI(temperature=0)
-zapier = ZapierNLAWrapper()
-toolkit = ZapierToolkit.from_zapier_nla_wrapper(zapier)
-agent_zapier = initialize_agent(toolkit.get_tools(), llm_2, agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION, verbose=True)
 tools = load_tools(["serpapi", "llm-math"], llm=llm)
 agent = initialize_agent(tools, llm, agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION, verbose=True)
 chain_new = APIChain.from_llm_and_api_docs(llm, open_meteo_docs.OPEN_METEO_DOCS, verbose=True)
@@ -137,8 +130,6 @@ python_code = create_python_agent(
     tool=PythonREPLTool(),
     verbose=True
 )
-access_token = open(CURR_DIR + "key_ipinfo.json").read()
-handler = ipinfo.getHandler(access_token)
 # Important for linux users.
 # Prevents permanent application hang and crash by using the wrong Microphone
 if 'linux' in platform:
@@ -455,8 +446,6 @@ while True:
                         speak(respuesta.text)
                     except:
                         speak("Lo siento, no he podido conseguir la información.")
-                elif '0x0Z' in res:
-                    agent_zapier.run(transcription2)
             elif '0x0F' in res:
                 speak(bot.chatbot(f"[{emotion}] {transcription2}"))
             else:

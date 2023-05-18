@@ -11,8 +11,6 @@ you need to create this files and put the api keys of the respective services:
 - key_serpapi.json (you need to copy from [SerpApi](https://serpapi.com/dashboard))
 - key_owm.json (you need to copy from [OpenWeatherMap](https://home.openweathermap.org/api_keys))
 
-Zapier and ipinfo will be removed in the next hotfix.
-
 Also, you will need NVIDIA CUDA 11.0
 
 ## Tutorial en Español
@@ -23,7 +21,5 @@ necesitarás crear los siguientes archivos e ingresar las claves api de sus resp
 - key_replicate.json (necesitas copiarlo de [Replicate](https://replicate.com/account/api-tokens))
 - key_serpapi.json (necesitas copiarlo de [SerpApi](https://serpapi.com/dashboard))
 - key_owm.json (necesitas copiarlo de [OpenWeatherMap](https://home.openweathermap.org/api_keys))
-
-Zapier y ipinfo seran removidos en el siguiente parche.
 
 Tambien, necesitarás NVIDIA CUDA 11.0

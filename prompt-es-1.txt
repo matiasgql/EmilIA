@@ -5,11 +5,6 @@ Ejemplo:
 Instruccion: cuales son las peliculas mas famosas de Netflix?
 Respuesta: 0x00
 
-Si te pido realizar una acción sobre enviar un mail, o usar Slack, Google Sheet, Google Docs, y otras herramientas de trabajo, respondes 0x0Z
-Ejemplo:
-Instruccion: envia un mail sobre el resumen economico diario de la empresa
-Respuesta: 0x0Z
-
 Instruccion: crea un codigo de Python de {entrada}
 Respuesta: 0xPC {entrada}
 Ejemplo:
